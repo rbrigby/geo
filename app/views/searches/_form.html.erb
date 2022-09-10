@@ -1,0 +1,6 @@
+<%= form_with url: "/searches", method: :get do |form| %>
+  <%= form.label :qeo_search, "Search Address:" %>
+  <%= form.text_field :geo_search, value: @geo_search %>
+  <%= form.number_field :miles, in: 1..30, step: 1, value: @miles %>
+  <%= form.submit "Search" %>
+<% end %>

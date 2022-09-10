@@ -1,0 +1,27 @@
+<br>
+<%= render 'form' %>
+
+<h3>TOTAL Addresses <%= @addresses.count %></h3>
+<table>
+  <tr>
+    <th>ID</td>
+    <th>Street1</td>
+    <th>Street2</td>
+    <th>City</td>
+    <th>State</td>
+    <th>Zip</td>
+    <th>PostGIS Object</td>
+  </tr>
+
+<% @addresses.each do |address| %>
+  <tr>
+  <td><%= address.id %></td>
+  <td><%= address.street1 %></td>
+  <td><%= address.street2 %></td>
+  <td><%= address.city %></td>
+  <td><%= address.state %></td>
+  <td><%= address.zip %></td>
+  <td><%= address.lonlat %></td>
+  </tr>
+<% end %>
+<%= will_paginate @addresses %>
